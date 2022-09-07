@@ -1,0 +1,32 @@
+.messages {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: brown;
+    text-transform: capitalize;
+}
+.formInputs {
+  justify-content: center;
+  position: absolute;
+}
+
+.formFields {
+    position: absolute;
+    margin: 10px 20px 10px 20px;
+}
+
+.circle {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #000;
+    position: absolute;
+    border-radius: 15px;
+  }
+  
+  body {
+    background: linear-gradient(320deg, #2ecc71 15%, #2980b9 85%) fixed;
+  }
+  .homeButton {
+    position: absolute;
+    right: 5px;
+    top: 10px;
+
+}

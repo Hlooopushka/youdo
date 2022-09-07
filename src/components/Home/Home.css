@@ -1,0 +1,10 @@
+.regButtn {
+    position: absolute;
+    right: 10px;
+    top: 45px;
+}
+.signButtn {
+   position: absolute;
+   right: 10px;
+   top: 15px;
+}
