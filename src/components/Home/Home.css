@@ -8,3 +8,31 @@
    right: 10px;
    top: 15px;
 }
+.homeCarts {
+    display: flex;
+    flex-direction: row;
+    clear: both;
+}
+.offers {
+    float: left; 
+    width: 50%;
+    padding-left: 550px;
+}
+.seekers{
+    float: right; 
+    width: 50%; 
+    text-align: right;
+    padding-right: 550px;
+}
+.workersCards {
+    width: 49%;
+    height: 300px;
+    border-style: solid;
+    float: left; 
+}
+.seekersCards {
+    float: right;
+    width: 50%;
+    height: 300px;
+    border-style: solid;
+}

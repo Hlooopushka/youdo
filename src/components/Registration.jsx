@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, {  useState } from 'react';
 import './Registration.css';
-import { NavLink } from 'react-router-dom';
-import axios from "axios";
+import { NavLink, useNavigate } from 'react-router-dom';
+// import axios from "axios";
+
 // import {animateCircles} from './MouseMove'
 
 
@@ -11,9 +12,9 @@ const Registration = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
-
     const [submit, setSubmit] = useState(false);
     const [error, setError] = useState({status : false, errorMessage: ''}); 
+    const navigation = useNavigate();
     //  const [users, setUsers] = useState([]);
     //  const [currentId, setCurrentId] = useState('')
         
@@ -99,19 +100,28 @@ const Registration = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        const userData = {
+            name,
+            email,
+            password,
+          };
+          localStorage.setItem('token-info', JSON.stringify(userData));
         if (name ==='' || email ==='' || email.type === 'undefined' || password ==='' || confirmPassword ==='') {
             setSubmit(false);
             setError({status: true, errorMessage:'You have to enter all the fields'});
         } else {
             if (password === confirmPassword) {
               setError({status: false, errorMessage:'' });
-            setSubmit(true);  
+            setSubmit(true); 
+            navigation('/userHome') 
             } else {
                 setError({status: true, errorMessage:'Passwords do not match'});
             }
             
         }
     }
+
+    
 
     return (
 
@@ -143,17 +153,19 @@ const Registration = () => {
             onChange={handleName}
             value = {name}
             placeholder = 'Enter your name'
+            autoComplete='username'
         ></input>
         <input 
             onChange={handleEmail}
             value = {email}
             placeholder = 'Enter your email'
             type='email'
+            autoComplete='email'
         ></input>
         <input
             onChange={handlePassword}
             value = {password}
-            autoComplete="off"
+            autoComplete="on"
             placeholder = 'Enter your password'
             type='password'
         ></input>
@@ -162,13 +174,16 @@ const Registration = () => {
             value = {confirmPassword}
             placeholder = 'Confirm your password'
             type='password'
+            autoComplete="on"
         ></input>  
    
         <button
             onClick = {(e)=> handleSubmit(e)}
             className = 'submitButton'
             type = 'submit'
-        >Submit</button>
+            >Submit</button>
+
+
         </form>
         </div>
         </div>

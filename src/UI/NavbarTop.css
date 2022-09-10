@@ -4,15 +4,10 @@
     border-style: solid;
     border-color: beige;
 }
-
-
-
 .topBattons {
     height:50px;
     width: 30px;
-    
 }
-
 .regButt {
     position: absolute;
     right: 10px;
