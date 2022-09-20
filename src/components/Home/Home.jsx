@@ -1,19 +1,28 @@
+import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import BgLoader from '../../UI/BgLoader';
+import FormRegistration from '../../UI/FormRegistration';
 import './Home.css';
 
 
-const Home = () => {
-   
+
+const Home = (handleSignIn) => {
+
+// const [bgLoader, setBgLoader] = useState(false);
+
+// const handleBgLoader = () => {
+//         if(handleSignIn===true) {
+//          setBgLoader(true)
+//         }
+//       }
+
 
     return (
         <div>
-            <NavLink className='signButtn' to="/signin"> Sign In</NavLink>
-            <NavLink className='regButtn' to="/registration"> To registration</NavLink>
+            {/* <BgLoader/> */}
             <div className='homeCarts'> 
-            <h3 className='offers'>Job offers: </h3>
-            <h3 className='seekers'>Need to do:</h3></div>
-            <div className='workersCards'> </div>
-            <div className='seekersCards'></div>
+            <h3 className='offers'>They can do: </h3>
+            <h3 className='seekers'>They looking for someone:</h3></div>
             </div>
             
         
